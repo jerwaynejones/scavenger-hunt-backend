@@ -1,6 +1,6 @@
 # LICENSE
 
-**IMPORTANT**- READ CAREFULLY: By downloading, installing, or using the Scavenger Hunt Frontend software ("Software"), you agree to be bound by the terms of this license agreement ("Agreement"). If you do not agree to the terms of this Agreement, do not download, install, or use the Software.
+**IMPORTANT**- READ CAREFULLY: By downloading, installing, or using the Scavenger Hunt software ("Software"), you agree to be bound by the terms of this license agreement ("Agreement"). If you do not agree to the terms of this Agreement, do not download, install, or use the Software.
 
 ## 1. GRANT OF LICENSE
 
