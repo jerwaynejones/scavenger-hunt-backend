@@ -7,11 +7,13 @@ const StepSchema = new mongoose.Schema({
 });
 
 const ScavengerHuntSchema = new mongoose.Schema({
-    token: { type: String, required: true, unique: true }, // The unique token for the URL
+    token: { type: String, required: true, unique: true },
     theme: { type: String, required: true },
+    giftDescription: { type: String, required: true }, // Add this line
     steps: [StepSchema],
     finalGiftLocation: { type: String },
     createdAt: { type: Date, default: Date.now },
 });
+
 
 export default mongoose.model('ScavengerHunt', ScavengerHuntSchema);
