@@ -11,17 +11,17 @@ function generateUniqueToken() {
 
 // Save a new hunt and return a unique token
 router.post('/save', async (req, res) => {
-    const { theme, steps, finalGiftLocation } = req.body;
-    if (!theme || !steps) {
-        return res.status(400).json({ error: 'Missing required fields' });
+    const { theme, steps, finalGiftLocation, giftDescription } = req.body;
+    if (!theme || !steps || !giftDescription) {
+        return res.status(400).json({ error: 'Missing required fields: theme, steps, and giftDescription are required.' });
     }
 
     try {
         const token = generateUniqueToken();
-
         const hunt = new ScavengerHunt({
             token,
             theme,
+            giftDescription,
             steps,
             finalGiftLocation
         });
@@ -44,7 +44,15 @@ router.get('/:token', async (req, res) => {
             return res.status(404).json({ error: 'Hunt not found' });
         }
 
-        res.json(hunt);
+        // Include giftDescription in the response
+        res.json({
+            token: hunt.token,
+            theme: hunt.theme,
+            giftDescription: hunt.giftDescription,
+            steps: hunt.steps,
+            finalGiftLocation: hunt.finalGiftLocation,
+            createdAt: hunt.createdAt
+        });
     } catch (error) {
         console.error('Error fetching hunt:', error);
         res.status(500).json({ error: 'Server error' });
