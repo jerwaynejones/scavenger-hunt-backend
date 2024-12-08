@@ -2,7 +2,7 @@
 import mongoose from 'mongoose';
 
 const StepSchema = new mongoose.Schema({
-    location: { type: String, required: true },
+    location: { type: String, required: false },
     clue: { type: String, required: true },
 });
 

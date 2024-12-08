@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "start:prod": "node index.js"
   },
   "private": true,
   "keywords": [],
-  "author": "",
+  "author": "Jeremy Jones",
   "license": "ISC",
   "description": "",
   "dependencies": {
