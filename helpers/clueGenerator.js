@@ -21,9 +21,9 @@ export async function generateClue(theme, giftDescription, previousLocation, nex
 
 function createPrompt(theme, giftDescription, previousLocation, nextLocation, difficultyLevel) {
     const difficultyInstructions = {
-        Easy: 'The clue should be straightforward and easy to understand.',
-        Medium: 'The clue should be moderately challenging with some clever hints.',
-        Hard: 'The clue should be challenging, possibly using riddles or wordplay.',
+        Easy: 'The clue should be straightforward and easy to understand. These clues are intended for children or beginners. You can be direct about the room but only hint about the hiding spot',
+        Medium: 'The clue should be moderately challenging with some clever hints. These clues are suitable for most participants. You should only hint about the room and the hiding spot',
+        Hard: 'The clue should be super challenging, using indirect riddles or wordplay. Never be be very obvious. These clues are intended for experienced scavenger hunters or puzzle enthusiasts. Only vague hints about the hiding spot, and only very vague hints about the room',
     };
 
     const isFinalClue = !previousLocation || previousLocation.trim() === '';
@@ -35,11 +35,11 @@ function createPrompt(theme, giftDescription, previousLocation, nextLocation, di
         ? `The previous clue was hidden at: "${previousLocation}".`
         : '';
 
-    return `You are an expert at creating scavenger hunt clues.
+    return `You are an expert at creating riddles.
+Create a ${difficultyLevel.toLowerCase()} difficulty, fun, engaging, gift-themed riddle/clue to: "${nextLocation}".
+${difficultyInstructions[difficultyLevel]}
 ${theme}
 ${clueContext}
 ${previousLocationText}
-Create a ${difficultyLevel.toLowerCase()} difficulty, fun, engaging, gift-themed riddle/clue that will guide the reader to the next location: "${nextLocation}".
-${difficultyInstructions[difficultyLevel]}
 The clue should be written in one or two sentences, never mention the next location directly, and maintain the excitement of the hunt. It should feel like part of a scavenger hunt, not a treasure map.`;
 }
