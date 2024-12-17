@@ -31,7 +31,7 @@ This backend system for a scavenger hunt game provides APIs to generate clues an
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your-repository/scavenger-hunt-backend.git
+   git clone https://github.com/jerwaynejones/scavenger-hunt-backend.git
    cd scavenger-hunt-backend
    ```
 
@@ -60,21 +60,6 @@ The backend defines several routes under the `/api` prefix:
 - **PUT** `/api/hunts/:huntId/steps`: Add a step to a scavenger hunt.
 - **PUT** `/api/hunts/:huntId/final`: Set the final gift location.
 
-## Development
-
-### Testing
-
-To run the test suite, execute:
-```
-npm test
-```
-
-### Linting
-
-Ensure code quality and consistency with ESLint:
-```
-npm run lint
-```
 
 ## License
 
